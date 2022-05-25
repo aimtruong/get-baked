@@ -1,0 +1,22 @@
+{
+  "name": "get-baked",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aimtruong/get-baked.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aimtruong/get-baked/issues"
+  },
+  "homepage": "https://github.com/aimtruong/get-baked#readme",
+  "dependencies": {
+    "concurrently": "^7.2.1"
+  }
+}
