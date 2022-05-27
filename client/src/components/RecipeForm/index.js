@@ -2,32 +2,32 @@
 import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/client';
-import { ADD_THOUGHT } from '../../utils/mutations';
+import { ADD_RECIPE } from '../../utils/mutations';
 
-import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
+import { QUERY_RECIPES, QUERY_ME } from '../../utils/queries';
 
-const ThoughtForm = () => {
+const RecipeForm = () => {
     const [thoughtText, setText] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
     
-    const [addThought, { error }] = useMutation(ADD_THOUGHT, {
-        update(cache, { data: { addThought } }){
+    const [addRecipe, { error }] = useMutation(ADD_RECIPE, {
+        update(cache, { data: { addRecipe } }){
             try{
                 const { me } = cache.readQuery({ query: QUERY_ME });
                 cache.writeQuery({
                     query: QUERY_ME,
-                    data: { me: { ...me, thoughts: [...me.thoughts, addThought] } }
+                    data: { me: { ...me, recipes: [...me.recipes, addRecipe] } }
                 });
             }
             catch(e){
-                console.warn('First thought insertion by user!');
+                console.warn('First recipe insertion by user!');
             }
 
-            const { thoughts } = cache.readQuery({ query: QUERY_THOUGHTS });
+            const { recipes } = cache.readQuery({ query: QUERY_RECIPES });
 
             cache.writeQuery({
-                query: QUERY_THOUGHTS,
-                data: { thoughts: [addThought, ...thoughts] }
+                query: QUERY_RECIPES,
+                data: { recipes: [addRecipe, ...recipes] }
             });
         }
     });
@@ -43,7 +43,7 @@ const ThoughtForm = () => {
         event.preventDefault();
 
         try{
-            await addThought({
+            await addRecipe({
                 variables: { thoughtText }
             });
             
@@ -66,7 +66,7 @@ const ThoughtForm = () => {
                 onSubmit = {handleFormSubmit}
             >
                 <textarea
-                    placeholder = "Here's a new thought..."
+                    placeholder = "Here's a new recipe..."
                     value = {thoughtText}
                     className = 'form-input col-12 col-md-9'
                     onChange = {handleChange}
@@ -79,4 +79,4 @@ const ThoughtForm = () => {
     );
 };
 
-export default ThoughtForm;
+export default RecipeForm;
