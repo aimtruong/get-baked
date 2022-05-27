@@ -3,11 +3,11 @@ const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 const dateFormat = require('../utils/dateFormat');
 
-const thoughtSchema = new Schema(
+const recipeSchema = new Schema(
   {
-    thoughtText: {
+    recipeText: {
       type: String,
-      required: 'You need to leave a thought!',
+      required: 'You need to make a recipe!',
       minlength: 1,
       maxlength: 280
     },
@@ -29,10 +29,10 @@ const thoughtSchema = new Schema(
   }
 );
 
-thoughtSchema.virtual('reactionCount').get(function() {
+recipeSchema.virtual('reactionCount').get(function() {
   return this.reactions.length;
 });
 
-const Thought = model('Thought', thoughtSchema);
+const Recipe = model('Recipe', recipeSchema);
 
-module.exports = Thought;
+module.exports = Recipe;

@@ -1,5 +1,5 @@
 
-const { User, Thought } = require('../models');
+const { User, Recipe } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -9,7 +9,7 @@ const resolvers = {
             if(context.user){
                 const userData = await User.findOne({ _id: context.user._id })
                 .select('-__v -password')
-                .populate('thoughts')
+                .populate('recipes')
                 .populate('friends');
                 
                 return userData;
@@ -18,28 +18,28 @@ const resolvers = {
             throw new AuthenticationError('Not logged in');
         },
 
-        // GET all thoughts
-        thoughts: async (parent, { username }) => {
+        // GET all recipes
+        recipes: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return Thought.find(params).sort({ createdAt: -1 });
+            return Recipe.find(params).sort({ createdAt: -1 });
         },
-        // GET a thought
-        thought: async (parent, { _id }) => {
-            return Thought.findOne({ _id });
+        // GET a recipe
+        recipe: async (parent, { _id }) => {
+            return Recipe.findOne({ _id });
         },
         // GET all users
         users: async () => {
             return User.find()
                 .select('-__v -password')
                 .populate('friends')
-                .populate('thoughts');
+                .populate('recipes');
         },
         // GET a user
         user: async(parent, { username }) => {
             return User.findOne({ username })
                 .select('-__v -password')
                 .populate('friends')
-                .populate('thoughts');
+                .populate('recipes');
         }
     },
 
@@ -68,15 +68,15 @@ const resolvers = {
 
         addThought: async (parent, args, context) => {
             if(context.user){
-                const thought = await Thought.create({ ...args, username: context.user.username });
+                const recipe = await Recipe.create({ ...args, username: context.user.username });
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { thoughts: thought._id } },
+                    { $push: { recipes: recipe._id } },
                     { new: true }
                 );
 
-                return thought;
+                return recipe;
             }
 
             throw new AuthenticationError('You need to be logged in!');
@@ -84,7 +84,7 @@ const resolvers = {
 
         addReaction: async (parent, { thoughtId, reactionBody }, context) => {
             if(context.user){
-                const updatedThought = await Thought.findOneAndUpdate(
+                const updatedThought = await Recipe.findOneAndUpdate(
                     { _id: thoughtId },
                     { $push: { reactions: { reactionBody, username: context.user.username } } },
                     { new: true, runValidators: true }
