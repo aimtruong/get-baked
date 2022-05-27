@@ -9,7 +9,7 @@ const resolvers = {
             if(context.user){
                 const userData = await User.findOne({ _id: context.user._id })
                 .select('-__v -password')
-                .populate('recipies');
+                .populate('recipes');
                 
                 return userData;
             }
@@ -18,7 +18,7 @@ const resolvers = {
         },
 
         // GET all thoughts
-        recipies: async (parent, { username }) => {
+        recipes: async (parent, { username }) => {
             const params = username ? { username } : {};
             return Recipe.find(params).sort({ createdAt: -1 });
         },
@@ -30,13 +30,13 @@ const resolvers = {
         users: async () => {
             return User.find()
                 .select('-__v -password')
-                .populate('recipies');
+                .populate('recipes');
         },
         // GET a user
         user: async(parent, { username }) => {
             return User.findOne({ username })
                 .select('-__v -password')
-                .populate('recipies');
+                .populate('recipes');
         }
     },
 
@@ -69,7 +69,7 @@ const resolvers = {
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { recipies: recipe._id } },
+                    { $push: { recipes: recipe._id } },
                     { new: true }
                 );
 

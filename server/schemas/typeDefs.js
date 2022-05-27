@@ -8,7 +8,7 @@ const typeDefs = gql`
         _id: ID
         username: String
         email: String
-        recipies: [Recipe]
+        recipes: [Recipe]
     }
 
     type Recipe{
@@ -34,7 +34,7 @@ const typeDefs = gql`
         me: User
         users: [User]
         user(username: String!): User
-        recipe(username: String): [Recipe]
+        recipes(username: String): [Recipe]
         recipe(_id: ID!): Recipe
     }
 

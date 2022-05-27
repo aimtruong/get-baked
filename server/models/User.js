@@ -21,7 +21,7 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
-    recipies: [
+    recipes: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Recipe'
