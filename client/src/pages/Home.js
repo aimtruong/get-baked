@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_THOUGHTS, QUERY_ME_BASIC  } from '../utils/queries';
+import { QUERY_RECIPES, QUERY_ME_BASIC  } from '../utils/queries';
 
 import RecipeList from '../components/RecipeList';
 import RecipeForm from '../components/RecipeForm';
@@ -9,11 +9,11 @@ import RecipeForm from '../components/RecipeForm';
 import Auth from '../utils/auth';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
+  const { loading, data } = useQuery(QUERY_RECIPES);
 
   const { data:userData } = useQuery(QUERY_ME_BASIC);
   
-  const thoughts = data?.thoughts || [];
+  const recipes = data?.recipes || [];
   
   const loggedIn = Auth.loggedIn();
 
@@ -29,7 +29,7 @@ const Home = () => {
           loading ? (
             <div>Loading...</div>
           ) : (
-            <RecipeList thoughts = {thoughts} title = 'Some Feed for Thought(s)...'/>
+            <RecipeList recipes = {recipes} title = 'Some Feed for Recipe(s)...'/>
           )}
         </div>
         {loggedIn && userData ? (
