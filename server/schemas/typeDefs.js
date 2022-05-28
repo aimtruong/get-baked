@@ -13,7 +13,7 @@ const typeDefs = gql`
 
     type Recipe{
         _id: ID
-        title: String
+        recipeTitle: String
         ingredients: [String]
         steps: String
         description: String
