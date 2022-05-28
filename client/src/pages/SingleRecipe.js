@@ -5,12 +5,12 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_THOUGHT } from '../utils/queries';
 
-import ReactionList from '../components/ReactionList';
-import ReactionForm from '../components/ReactionForm';
+import ReviewList from '../components/ReviewList';
+import ReviewForm from '../components/ReviewForm';
 
 import Auth from '../utils/auth';
 
-const SingleThought = (props) => {
+const SingleRecipe = (props) => {
   const { id: thoughtId } = useParams();
   
   const { loading, data } = useQuery(QUERY_THOUGHT, {
@@ -39,10 +39,10 @@ const SingleThought = (props) => {
       <p>
       {thought.voteCount} <button className = "upvote">Upvote</button>
       </p>
-      {thought.reactionCount > 0 && (<ReactionList reactions = {thought.reactions} />)}
-      {Auth.loggedIn() && <ReactionForm thoughtId = {thought._id} />}
+      {thought.reactionCount > 0 && (<ReviewList reactions = {thought.reactions} />)}
+      {Auth.loggedIn() && <ReviewForm thoughtId = {thought._id} />}
     </div>
   );
 };
 
-export default SingleThought;
+export default SingleRecipe;

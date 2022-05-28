@@ -1,31 +1,38 @@
 
 import { gql } from '@apollo/client';
 
-export const QUERY_THOUGHTS = gql`
-    query thoughts($username: String){
-        thoughts(username: $username){
+export const QUERY_RECIPES = gql`
+    query recipes($username: String){
+        recipes(username: $username){
             _id
-            thoughtText
+            title
+            ingredients
+            steps
+            description
             createdAt
             username
-            reactionCount
-            reactions{
+            reviewCount
+            reviews{
                 _id
                 createdAt
                 username
-                reactionBody
+                reviewTitle
+                reviewText
             }
         }
     }
 `;
 
-export const QUERY_THOUGHT = gql`
-    query thought($id: ID!){
-        thought(_id: $id){
+export const QUERY_RECIPE = gql`
+    query recipe($id: ID!){
+        recipe(_id: $id){
             _id
-            thoughtText
             createdAt
             username
+            title
+            ingredients
+            steps
+            description
             reactionCount
             reactions{
                 _id
@@ -33,6 +40,7 @@ export const QUERY_THOUGHT = gql`
                 username
                 reactionBody
             }
+            votes
         }
     }
 `;
@@ -43,16 +51,16 @@ export const QUERY_USER = gql`
             _id
             username
             email
-            friendCount
-            friends{
+            recipes{
                 _id
-                username
-            }
-            thoughts{
-                _id
-                thoughtText
+                title
+                ingredients
+                steps
+                description
+                reviews
+                votes
                 createdAt
-                reactionCount
+                reviewCount
             }
         }
     }
@@ -64,23 +72,22 @@ export const QUERY_ME = gql`
             _id
             username
             email
-            friendCount
-            thoughts{
+            recipes{
                 _id
-                thoughtText
+                title
+                ingredients
+                steps
+                description
                 createdAt
-                reactionCount
-                reactions{
+                reviewCount
+                reviews{
                     _id
                     createdAt
-                    reactionBody
+                    reviewTitle
+                    reviewText
                     username
                 }
-            }
-            friends{
-                _id
-                username
-            }
+                votes
         }
     }
 `;
@@ -91,10 +98,11 @@ export const QUERY_ME_BASIC = gql`
             _id
             username
             email
-            friendCount
-            friends{
+            recipes{
                 _id
-                username
+                title
+                reviewCount
+                votes
             }
         }
     }

@@ -6,7 +6,7 @@ import { ADD_THOUGHT } from '../../utils/mutations';
 
 import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
 
-const ThoughtForm = () => {
+const RecipeForm = () => {
     const [thoughtText, setText] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
     
@@ -79,4 +79,4 @@ const ThoughtForm = () => {
     );
 };
 
-export default ThoughtForm;
+export default RecipeForm;

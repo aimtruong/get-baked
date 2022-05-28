@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ThoughtList = ({ thoughts, title }) => {
+const RecipeList = ({ thoughts, title }) => {
     if (!thoughts.length) {
         return <h3>No Recipes Yet</h3>;
     }
@@ -38,4 +38,4 @@ const ThoughtList = ({ thoughts, title }) => {
     );
 };
 
-export default ThoughtList;
+export default RecipeList;
