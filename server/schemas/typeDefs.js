@@ -20,6 +20,7 @@ const typeDefs = gql`
         createdAt: String
         username: String
         reviews: [Review]
+        votes: Int
     }
 
     type Review {
