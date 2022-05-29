@@ -33,8 +33,8 @@ export const QUERY_RECIPE = gql`
             ingredients
             steps
             description
-            reactionCount
-            reactions{
+            reviewCount
+            reviews{
                 _id
                 createdAt
                 username

@@ -67,7 +67,7 @@ const RecipeForm = () => {
             >
                 <textarea
                     placeholder = "Here's a new recipe..."
-                    value = {description}
+                    value = {recipeText}
                     className = 'form-input col-12 col-md-9'
                     onChange = {handleChange}
                 ></textarea>

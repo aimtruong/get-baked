@@ -44,7 +44,7 @@ function App() {
                 <Route path = '/login' element = {<Login />} />
                 <Route path = '/signup' element = {<Signup />} />
                 <Route path = '/profile?' element = {<Profile />} />
-                <Route path = '/thought/:id' element = {<SingleRecipe />} />
+                <Route path = '/recipe/:id' element = {<SingleRecipe />} />
                 <Route path = '*' element = {<NoMatch />} />
               </Routes>
             </div>
