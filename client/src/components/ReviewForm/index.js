@@ -22,7 +22,11 @@ const ReviewForm = ({ recipeId }) => {
 
         try{
             await addReview({
+<<<<<<< HEAD
                 variables: { reviewText, recipeId }
+=======
+                variables: { reviewBody, recipeId }
+>>>>>>> f914e5e84dddcdb329abe031d3541f778f3bde9b
             });
 
             setBody('');
@@ -45,7 +49,11 @@ const ReviewForm = ({ recipeId }) => {
             >
                 <textarea
                     placeholder = 'Leave a review to this recipe...'
+<<<<<<< HEAD
                     value = {reviewText}
+=======
+                    value = {reviewBody}
+>>>>>>> f914e5e84dddcdb329abe031d3541f778f3bde9b
                     className = 'form-input col-12 col-md-9'
                     onChange = {handleChange}
                 ></textarea>

@@ -5,8 +5,13 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_RECIPE } from '../utils/queries';
 
+<<<<<<< HEAD
 import ReviewList from '../components/ReviewList';
 import ReviewForm from '../components/ReviewForm';
+=======
+import ReactionList from '../components/ReviewList';
+import ReactionForm from '../components/ReviewForm';
+>>>>>>> f914e5e84dddcdb329abe031d3541f778f3bde9b
 
 import Auth from '../utils/auth';
 

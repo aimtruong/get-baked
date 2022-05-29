@@ -7,7 +7,11 @@ import { ADD_RECIPE } from '../../utils/mutations';
 import { QUERY_RECIPES, QUERY_ME } from '../../utils/queries';
 
 const RecipeForm = () => {
+<<<<<<< HEAD
     const [description, setText] = useState('');
+=======
+    const [recipeText, setText] = useState('');
+>>>>>>> f914e5e84dddcdb329abe031d3541f778f3bde9b
     const [characterCount, setCharacterCount] = useState(0);
     
     const [addRecipe, { error }] = useMutation(ADD_RECIPE, {
@@ -44,7 +48,11 @@ const RecipeForm = () => {
 
         try{
             await addRecipe({
+<<<<<<< HEAD
                 variables: { description }
+=======
+                variables: { recipeText }
+>>>>>>> f914e5e84dddcdb329abe031d3541f778f3bde9b
             });
             
             setText('');
@@ -67,7 +75,7 @@ const RecipeForm = () => {
             >
                 <textarea
                     placeholder = "Here's a new recipe..."
-                    value = {description}
+                    value = {recipeText}
                     className = 'form-input col-12 col-md-9'
                     onChange = {handleChange}
                 ></textarea>
