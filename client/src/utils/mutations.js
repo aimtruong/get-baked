@@ -35,8 +35,8 @@ export const ADD_RECIPE = gql`
             description
             createdAt
             username
-            reactionCount
-            reactions{
+            reviewCount
+            reviews{
                 _id
             }
         }
