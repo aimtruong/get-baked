@@ -20,6 +20,8 @@ const typeDefs = gql`
         createdAt: String
         username: String
         reviews: [Review]
+        reviewCount: Int
+        votes: Int
     }
 
     type Review {
@@ -28,6 +30,8 @@ const typeDefs = gql`
         reviewText: String
         createdAt: String
         username: String
+        reviewCount: Int
+        votes: Int
     }
 
     type Query{

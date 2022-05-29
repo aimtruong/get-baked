@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/client';
-import { ADD_REACTION } from '../../utils/mutations';
+import { ADD_REVIEW } from '../../utils/mutations';
 
-const ReactionForm = ({ thoughtId }) => {
-    const [reactionBody, setBody] = useState('');
+const ReviewForm = ({ recipeId }) => {
+    const [reviewText, setBody] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
 
-    const [addReaction, { error }] = useMutation(ADD_REACTION);
+    const [addReview, { error }] = useMutation(ADD_REVIEW);
 
     const handleChange = (event) => {
         if(event.target.value.length <= 280){
@@ -21,8 +21,8 @@ const ReactionForm = ({ thoughtId }) => {
         event.preventDefault();
 
         try{
-            await addReaction({
-                variables: { reactionBody, thoughtId }
+            await addReview({
+                variables: { reviewText, recipeId }
             });
 
             setBody('');
@@ -44,8 +44,8 @@ const ReactionForm = ({ thoughtId }) => {
                 onSubmit = {handleFormSubmit}
             >
                 <textarea
-                    placeholder = 'Leave a reaction to this thought...'
-                    value = {reactionBody}
+                    placeholder = 'Leave a review to this recipe...'
+                    value = {reviewText}
                     className = 'form-input col-12 col-md-9'
                     onChange = {handleChange}
                 ></textarea>
@@ -55,4 +55,4 @@ const ReactionForm = ({ thoughtId }) => {
     );
 };
 
-export default ReactionForm;
+export default ReviewForm;

@@ -25,11 +25,14 @@ export const ADD_USER = gql`
     }
 `;
 
-export const ADD_THOUGHT = gql`
-    mutation addThought($thoughtText: String!){
-        addThought(thoughtText: $thoughtText){
+export const ADD_RECIPE = gql`
+    mutation addRecipe($title: String!, $ingredients: String!, steps: String!, description: String!){
+        addRecipe(title: $title, ingredients: $ingredients, steps: $steps, description: $description){
             _id
-            thoughtText
+            title
+            ingredients
+            steps
+            description
             createdAt
             username
             reactionCount
@@ -40,14 +43,15 @@ export const ADD_THOUGHT = gql`
     }
 `;
 
-export const ADD_REACTION = gql`
-    mutation addReaction($thoughtId: ID!, $reactionBody: String!){
-        addReaction(thoughtId: $thoughtId, reactionBody: $reactionBody){
+export const ADD_REVIEW = gql`
+    mutation addReview($recipeId: ID!, $reviewTitle: String!, $reviewText: String!){
+        addReview(recipeId: $recipeId, reviewTitle: $reviewTitle, reviewText: $reviewText){
             _id
-            reactionCount
-            reactions{
+            reviewCount
+            reviews{
                 _id
-                reactionBody
+                reviewTitle
+                reviewText
                 createdAt
                 username
             }

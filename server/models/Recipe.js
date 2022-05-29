@@ -29,9 +29,17 @@ const RecipeSchema = new Schema(
       type: String,
       required: true
     },
-    reviews: [reviewSchema]
+    reviews: [reviewSchema],
+    votes: {
+      type: Number,
+      default: 0
+    }
   }
 );
+
+RecipeSchema.virtual('voteCount').get(function() {
+  return this.votes.length;
+});
 
 const Recipe = model('Recipe', RecipeSchema);
 
