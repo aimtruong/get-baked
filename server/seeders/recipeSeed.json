@@ -1,6 +1,6 @@
 [
     {
-        "title" : "Brownies",
+        "recipeTitle" : "Brownies",
         "ingredients" : "molestiae dicta voluptas ut iusto et hic nam", 
         "steps" : "add four table spoons of baking soda",
         "description" : "melty gooy goodness brownies", 
@@ -14,7 +14,7 @@
         ] 
     },
     {
-        "title" : "Cookies", 
+        "recipeTitle" : "Cookies", 
         "ingredients" : "Eggs, Milk, Flour, ...",
         "steps" : "first take the and then the ",
         "description" : "Cookies to die for",
@@ -28,7 +28,7 @@
         ] 
     },
     {
-        "title" : "Blueberry Sweet Rolls with Lemon", 
+        "recipeTitle" : "Blueberry Sweet Rolls with Lemon", 
         "ingredients" : "Blueberries, Lemons, ...",
         "steps" : "hi",
         "description" : "hi",
@@ -42,7 +42,7 @@
      ] 
     },
     {
-        "title" : "The Best Snickerdoodle", 
+        "recipeTitle" : "The Best Snickerdoodle", 
         "steps" : "In a large bowl, combine cream butter and sugars at high speed. Add egg, vanilla, and beat until smooth",
         "description" : "The best snickerdoodle you have ever eaten",
         "username" : "Donny21", 
@@ -56,7 +56,7 @@
         ] 
     },
     {
-        "title" : "Mini Bakewell Tarts", 
+        "recipeTitle" : "Mini Bakewell Tarts", 
         "steps" : "Heat oven to 180C lightly butter a 12 hole muffin tin. Unroll lo ",
         "description" : "Mini tarts with a bunch a flavor", 
         "ingredients" : ["120g of butter", "120g golden caster sugar", "1 egg", "1tbsp plain flour", "110g ground almonds", "90g of cherry jam"],
@@ -70,7 +70,7 @@
         ] 
     },
     {
-        "title" : "Pound Cake", 
+        "recipeTitle" : "Pound Cake", 
         "steps" : "Heat oven to 180C/160C fan/gas 4. Butter and flour a loaf tin measuring 22 x 11 x 7cm. Sift the flour with a pinch of salt, bicarbonate of soda and baking powder. Beat the butter and sugar until pale and fluffy, then add the lemon zest. Gradually add the eggs a little at a time, beating well after each addition. Mix the buttermilk with the lemon juice. Fold the flour mixture into the batter, alternating with the buttermilk and lemon mixture.",
         "description" : "This buttermilk pound cake has a dense, moist crumb and bags of lemon flavour to cut through the richness. Make it for afternoon tea or for a summer picnic",
         "ingredients" : ["butter", "flour", "baking powder", "sugar", "lemons", "2 large eggs", "buttermilk", "lemon juice"],  
@@ -89,7 +89,7 @@
      ] 
     },
     {
-        "title" : "Chocolate Chip Traybake", 
+        "recipeTitle" : "Chocolate Chip Traybake", 
         "steps" :"Heat oven to 180C/160C fan/gas 4. Butter and flour a loaf tin measuring 22 x 11 x 7cm. Sift the flour with a pinch of salt, bicarbonate of soda and baking powder. Beat the butter and sugar until pale and fluffy, then add the lemon zest. Gradually add the eggs a little at a time, beating well after each addition. Mix the buttermilk with the lemon juice. Fold the flour mixture into the batter, alternating with the buttermilk and lemon mixture.",
         "description" : "Easy to make, this traybake is ideal for cooking (and eating!) with kids",
         "ingredients" : ["grapeseed oil", "flour", "baking powder", "light brown soft sugar", "whole milk", "Vanilla extract", "2 large eggs", "white chocolate chips"],  
@@ -103,7 +103,7 @@
      ] 
     },
     {
-        "title" : "Butterfly Cake", 
+        "recipeTitle" : "Butterfly Cake", 
         "steps" : "Heat the oven to 180C/160C fan/gas 4. Line a cupcake tin with 10 cases. To make the sponge, tip the butter, sugar, eggs, vanilla, flour, baking powder and milk into a large mixing bowl and beat with either a hand whisk or electric mixer until smooth, pale and combined. Divide the batter between the cases and bake for 15 mins until golden brown and a skewer inserted in the middle of a cake comes out clean. Leave on a wire rack to cool.",
         "description" : "Treat family and friends to pretty butterfly cupcakes. Ours easy buns are topped with a light vanilla buttercream, jam and sprinkles, but you can decorate any way you like",
         "ingredients" : ["butter", "sugar", "2 eggs", "1tbsp vanilla extract", "110g self rasing flour", "half tbsp baking powder", "1tbsp milk", "2tbsp buttercream"],   
@@ -117,7 +117,7 @@
         ] 
     },
     {
-        "title" : "Coffee walnut millionaire's shortbread", 
+        "recipeTitle" : "Coffee walnut millionaire's shortbread", 
         "steps" : "To make the base, blitz the walnuts in a food processor until finely chopped. Add the flour, sugar, butter and ½ tsp salt and blitz until the mixture is combined. Tip onto a work surface and bring together into a dough. Press the dough into the base of the tin and bake for 25 mins until lightly golden. Leave to cool.",
         "description" : "Combine millionaire's shortbread with classic coffee and walnut flavours in this delicious bake. It's the perfect partner to a cup of tea for elevenses, or for a special occasion like Mother's Day",
         "ingredients" : ["200g cold unsalted butter , chopped, plus extra for the tin", "40g walnut halves", "250g plain flour", "75g golden caster sugar"],          
@@ -131,7 +131,7 @@
         ] 
     },
     {
-        "title" : " Lemon curd & orange cake", 
+        "recipeTitle" : " Lemon curd & orange cake", 
         "steps" : "1: Heat the oven to 180C/160C fan/gas 4. Butter a 1-litre loaf tin and line with baking parchment. 2: Put the butter, sugar, eggs, yogurt, self-raising flour, ground almonds, orange zest, milk and 2½ tbsp lemon curd in a large bowl and whisk until smooth. Put another 2½ tbsp lemon curd in a second bowl and whisk to loosen. 3: Spoon half the batter into the prepared tin, dollop over the lemon curd and top with the remaining batter. Scatter over the flaked almonds and bake for 50 mins, or until risen and golden. Leave to cool on a wire rack, scatter over some lemon zest and slice.",
         "description" : "Enjoy a slice of lemon curd and orange cake for elevenses or afternoon tea. Top with flaked almonds and lemon zest and serve with a cuppa",
         "ingredients" : ["170g soft salted butter", "150g golden caster sugar", "2 eggs", "70g natural yogurt", "150g self-raising flour", "50g ground almonds", "orange , zested", "2-3 tbsp milk", "5 tbsp lemon curd", "20g flaked almonds" ],  

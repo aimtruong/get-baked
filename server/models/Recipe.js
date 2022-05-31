@@ -5,7 +5,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const RecipeSchema = new Schema(
   {
-    title: {
+    recipeTitle: {
       type: String,
       required: 'You need to have a title'
     },

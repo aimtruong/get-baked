@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const RecipeList = ({ recipes, title }) => {
+const RecipeList = ({ recipes, recipeTitle }) => {
     if (!recipes.length) {
         return <h3>No Recipes Yet</h3>;
     }
@@ -10,7 +10,7 @@ const RecipeList = ({ recipes, title }) => {
 
     return (
         <div>
-            <h3>{title}</h3>
+            <h3>{recipeTitle}</h3>
             {recipes && recipes.map(recipe => (
                 <div key = {recipe._id} className = 'card mb-3'>
                     <p className = 'card-header'>

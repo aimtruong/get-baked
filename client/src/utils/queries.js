@@ -5,7 +5,7 @@ export const QUERY_RECIPES = gql`
     query recipes($username: String){
         recipes(username: $username){
             _id
-            title
+            recipeTitle
             ingredients
             steps
             description
@@ -29,7 +29,7 @@ export const QUERY_RECIPE = gql`
             _id
             createdAt
             username
-            title
+            recipeTitle
             ingredients
             steps
             description
@@ -53,7 +53,7 @@ export const QUERY_USER = gql`
             email
             recipes{
                 _id
-                title
+                recipeTitle
                 ingredients
                 steps
                 description
@@ -74,7 +74,7 @@ export const QUERY_ME = gql`
             email
             recipes{
                 _id
-                title
+                recipeTitle
                 ingredients
                 steps
                 description
@@ -100,7 +100,7 @@ export const QUERY_ME_BASIC = gql`
             email
             recipes{
                 _id
-                title
+                recipeTitle
                 reviewCount
                 votes
             }

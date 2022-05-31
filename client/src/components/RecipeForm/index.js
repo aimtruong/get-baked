@@ -7,7 +7,7 @@ import { ADD_RECIPE } from '../../utils/mutations';
 import { QUERY_RECIPES, QUERY_ME } from '../../utils/queries';
 
 const RecipeForm = () => {
-    const [title, setTitleText] = useState('');
+    const [recipeTitle, setTitleText] = useState('');
     const [description, setDescText] = useState('');
     const [ingredients, setIngredText] = useState('');
     const [steps, setStepsText] = useState('');
@@ -48,7 +48,7 @@ const RecipeForm = () => {
 
         try{
             await addRecipe({
-                variables: { title, description, ingredients, steps }
+                variables: { recipeTitle, description, ingredients, steps }
             });
             
             setTitleText('');
@@ -72,7 +72,7 @@ const RecipeForm = () => {
             >
                 <textarea
                     placeholder = "The Recipe Title"
-                    value = {title}
+                    value = {recipeTitle}
                     className = 'form-input col-12 col-md-9'
                     onChange = {handleChange}
                 ></textarea>

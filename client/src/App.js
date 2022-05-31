@@ -13,14 +13,6 @@ import SingleRecipe from './pages/SingleRecipe';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 
-import { useQuery } from '@apollo/client';
-import { QUERY_RECIPES, QUERY_ME_BASIC  } from './utils/queries';
-
-import RecipeList from './components/RecipeList';
-import RecipeForm from './components/RecipeForm';
-
-import Auth from './utils/auth';
-
 const httpLink = createHttpLink({
   uri: '/graphql'
 });
@@ -40,46 +32,27 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-
-
 function App() {
-  const { loading, data } = useQuery(QUERY_RECIPES);
-
-  const { data:userData } = useQuery(QUERY_ME_BASIC);
-  
-  const recipes = data?.recipes || [];
-  
-  const loggedIn = Auth.loggedIn();
-
   return (
-    
-    <main>
-      <div className='flex-row justify-space-between'>
-        {loggedIn && (
-          <div className = 'col-12 mb-3'>
-            <RecipeForm />
-          </div>
-        )}
-        <div className = {`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}> {
-          loading ? (
-            <div>Loading...</div>
-          ) : (
-            <RecipeList recipes = {recipes} title = 'Some Feed for Recipe(s)...'/>
-          )}
+    <ApolloProvider client = {client}>
+      <Router>
+        <div className='flex-column justify-flex-start min-100-vh'>
+          <Header />
+          <div className='container'>
+              
+              <Routes>
+                <Route path = '/' element = {<Home />} />
+                <Route path = '/login' element = {<Login />} />
+                <Route path = '/signup' element = {<Signup />} />
+                <Route path = '/profile?' element = {<Profile />} />
+                <Route path = '/recipe/:id' element = {<SingleRecipe />} />
+                <Route path = '*' element = {<NoMatch />} />
+              </Routes>
+              
+            </div>
         </div>
-        {loggedIn && userData ? (
-          <div className = 'col-12 col-lg-3 mb-3'>
-          </div>
-          ) : null
-        }
-      </div>
-    </main>
-
-
-
-
-
-    
+      </Router>
+    </ApolloProvider>
   );
 };
 

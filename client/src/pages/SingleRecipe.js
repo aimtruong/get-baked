@@ -30,7 +30,7 @@ const SingleRecipe = (props) => {
           <span style={{ fontWeight: 700 }} className="text-light">
             {recipe.username}
           </span>{"'s "}
-          recipe on {recipe.title} created on {recipe.createdAt}
+          recipe on {recipe.recipeTitle} created on {recipe.createdAt}
         </p>
         <div className="card-body">
           <p>{recipe.description}</p>
