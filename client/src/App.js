@@ -38,7 +38,8 @@ function App() {
       <Router>
         <div className='flex-column justify-flex-start min-100-vh'>
           <Header />
-            <div className='container'>
+          <div className='container'>
+              
               <Routes>
                 <Route path = '/' element = {<Home />} />
                 <Route path = '/login' element = {<Login />} />
@@ -47,6 +48,7 @@ function App() {
                 <Route path = '/recipe/:id' element = {<SingleRecipe />} />
                 <Route path = '*' element = {<NoMatch />} />
               </Routes>
+              
             </div>
         </div>
       </Router>

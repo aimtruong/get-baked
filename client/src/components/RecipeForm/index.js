@@ -7,8 +7,10 @@ import { ADD_RECIPE } from '../../utils/mutations';
 import { QUERY_RECIPES, QUERY_ME } from '../../utils/queries';
 
 const RecipeForm = () => {
-    const [description, setText] = useState('');
-    const [characterCount, setCharacterCount] = useState(0);
+    const [recipeTitle, setTitleText] = useState('');
+    const [description, setDescText] = useState('');
+    const [ingredients, setIngredText] = useState('');
+    const [steps, setStepsText] = useState('');
     
     const [addRecipe, { error }] = useMutation(ADD_RECIPE, {
         update(cache, { data: { addRecipe } }){
@@ -34,8 +36,10 @@ const RecipeForm = () => {
 
     const handleChange = event => {
         if(event.target.value.length <= 280){
-            setText(event.target.value);
-            setCharacterCount(event.target.value.length);
+            setTitleText(event.target.value);
+            setDescText(event.target.value);
+            setIngredText(event.target.value);
+            setStepsText(event.target.value);
         };
     };
 
@@ -44,11 +48,13 @@ const RecipeForm = () => {
 
         try{
             await addRecipe({
-                variables: { description }
+                variables: { recipeTitle, description, ingredients, steps }
             });
             
-            setText('');
-            setCharacterCount(0);
+            setTitleText('');
+            setDescText('');
+            setIngredText('');
+            setStepsText('');
         }
         catch(e){
             console.error(e);
@@ -57,17 +63,34 @@ const RecipeForm = () => {
 
     return (
         <div>
-            <p className = {`m-0 ${characterCount === 280 ? 'text-error' : ''}`}>
-                Character Count: {characterCount}/280
-                {error && <span className = 'ml-2'>Something went wrong...</span>}
+            <p>
+            {error && <span className = 'ml-2'>Something went wrong...</span>}
             </p>
             <form
                 className = 'flex-row justify-center justify-space-between-md align-stretch'
                 onSubmit = {handleFormSubmit}
             >
                 <textarea
-                    placeholder = "Here's a new recipe..."
-                    value = {recipeText}
+                    placeholder = "The Recipe Title"
+                    value = {recipeTitle}
+                    className = 'form-input col-12 col-md-9'
+                    onChange = {handleChange}
+                ></textarea>
+                <textarea
+                    placeholder = "The Recipe Description"
+                    value = {description}
+                    className = 'form-input col-12 col-md-9'
+                    onChange = {handleChange}
+                ></textarea>
+                <textarea
+                    placeholder = "The Recipe Ingredients"
+                    value = {ingredients}
+                    className = 'form-input col-12 col-md-9'
+                    onChange = {handleChange}
+                ></textarea>
+                <textarea
+                    placeholder = "The Recipe Steps"
+                    value = {steps}
                     className = 'form-input col-12 col-md-9'
                     onChange = {handleChange}
                 ></textarea>

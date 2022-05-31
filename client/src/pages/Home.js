@@ -14,7 +14,7 @@ const Home = () => {
   const { data:userData } = useQuery(QUERY_ME_BASIC);
   
   const recipes = data?.recipes || [];
-  
+  console.log(recipes);
   const loggedIn = Auth.loggedIn();
 
   return (
