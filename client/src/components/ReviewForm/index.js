@@ -5,15 +5,15 @@ import { useMutation } from '@apollo/client';
 import { ADD_REVIEW } from '../../utils/mutations';
 
 const ReviewForm = ({ recipeId }) => {
-    const [reviewText, setBody] = useState('');
-    const [characterCount, setCharacterCount] = useState(0);
+    const [reviewTitle, setTitleText] = useState('');
+    const [reviewText, setText] = useState('');
 
     const [addReview, { error }] = useMutation(ADD_REVIEW);
 
     const handleChange = (event) => {
         if(event.target.value.length <= 280){
-            setBody(event.target.value);
-            setCharacterCount(event.target.value.length);
+            setTitleText(event.target.value);
+            setText(event.target.value);
         }
     };
 
@@ -25,8 +25,8 @@ const ReviewForm = ({ recipeId }) => {
                 variables: { reviewText, recipeId }
             });
 
-            setBody('');
-            setCharacterCount(0);
+            setTitleText('');
+            setText('');
         }
         catch(e){
             console.error(e);
@@ -35,16 +35,21 @@ const ReviewForm = ({ recipeId }) => {
 
     return (
         <div>
-            <p className = {`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}>
-                Character Count: {characterCount}/280
-                {error && <span className = 'ml-2'>Something went wrong...</span>}
+            <p>
+            {error && <span className = 'ml-2'>Something went wrong...</span>}
             </p>
             <form
                 className = 'flex-row justify-center justify-space-between-md align-stretch'
                 onSubmit = {handleFormSubmit}
             >
                 <textarea
-                    placeholder = 'Leave a review to this recipe...'
+                    placeholder = 'The Review Title'
+                    value = {reviewTitle}
+                    className = 'form-input col-12 col-md-9'
+                    onChange = {handleChange}
+                ></textarea>
+                <textarea
+                    placeholder = 'The Review Title'
                     value = {reviewText}
                     className = 'form-input col-12 col-md-9'
                     onChange = {handleChange}
