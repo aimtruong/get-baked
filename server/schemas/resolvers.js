@@ -27,7 +27,7 @@ const resolvers = {
             return Recipe.findOne({ _id });
         },
         // GET all users
-        users: async () => {
+        users: async (parent) => {
             return User.find()
                 .select('-__v -password')
                 .populate('recipes');
