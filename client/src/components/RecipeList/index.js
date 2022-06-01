@@ -20,15 +20,15 @@ const RecipeList = ({ recipes, recipeTitle }) => {
                             className = 'text-light'
                             >
                                 {recipe.username}
-                        </Link>{"'s "}
+                        </Link>{"' "}
                         recipe created on {recipe.createdAt}
                     </p>
                     <div className = 'card-body'>
                         <Link to = {`/thought/${recipe._id}`}>
-                            <p>{recipe.description}</p>
+                            <p>{recipe.recipeTitle}</p>
                             <p className = 'mb-0'>
                                 Reviews: {recipe.reviewCount} || Click to{' '}
-                                {recipe.reviewCount ? 'see' : 'start'} the discussion!
+                                {recipe.reviewCount ? 'see' : 'make a'} Reviews!
                             </p>
                         </Link>
                     </div>
