@@ -24,7 +24,7 @@ const RecipeList = ({ recipes, recipeTitle }) => {
                         recipe created on {recipe.createdAt}
                     </p>
                     <div className = 'card-body'>
-                        <Link to = {`/thought/${recipe._id}`}>
+                        <Link to = {`/recipe/${recipe._id}`}>
                             <p>{recipe.recipeTitle}</p>
                             <p className = 'mb-0'>
                                 Reviews: {recipe.reviewCount} || Click to{' '}
