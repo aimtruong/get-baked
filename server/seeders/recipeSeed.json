@@ -1,7 +1,7 @@
 [
     {
         "recipeTitle" : "Brownies",
-        "ingredients" : "molestiae dicta voluptas ut iusto et hic nam", 
+        "ingredients" : ["molestiae dicta voluptas ut iusto et hic nam"], 
         "steps" : "add four table spoons of baking soda",
         "description" : "melty gooy goodness brownies", 
         "username" : "Jody.Eichmann", 
@@ -15,7 +15,7 @@
     },
     {
         "recipeTitle" : "Cookies", 
-        "ingredients" : "Eggs, Milk, Flour, ...",
+        "ingredients" : ["Eggs", "Milk", "Flour"],
         "steps" : "first take the and then the ",
         "description" : "Cookies to die for",
         "username" : "Shyann.Crist57", 
@@ -29,7 +29,7 @@
     },
     {
         "recipeTitle" : "Blueberry Sweet Rolls with Lemon", 
-        "ingredients" : "Blueberries, Lemons, ...",
+        "ingredients" : ["Blueberries, Lemons, ..."],
         "steps" : "hi",
         "description" : "hi",
         "username" : "Elton_Heaney", 
