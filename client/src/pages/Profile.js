@@ -43,15 +43,15 @@ const Profile = (props) => {
 
       </div>
 
+      <div className = 'mb-3'>
+        {!userParam && <RecipeForm />}
+      </div>
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8">
           <RecipeList 
             recipes = {user.recipes} 
             title = {`${user}'s recipes...`} />
         </div>
-      </div>
-      <div className = 'mb-3'>
-        {!userParam && <RecipeForm />}
       </div>
     </div>
   );

@@ -13,7 +13,17 @@ const RecipeList = ({ recipes, recipeTitle }) => {
             <h3>{recipeTitle}</h3>
             {recipes && recipes.map(recipe => (
                 <div key = {recipe._id} className = 'card mb-3'>
-                    <p className = 'card-header'>
+
+                    <div className = 'card-body text-center'>
+                        <Link to = {`/recipe/${recipe._id}`}>
+                            <h2 className='mb-3'>{recipe.recipeTitle}</h2>
+                            <h6 className = 'mb-0'>
+                                Reviews: {recipe.reviewCount} || Click to{' '}
+                                {recipe.reviewCount ? 'see' : 'make a'} Review!
+                            </h6>
+                        </Link>
+                    </div>
+                    <p className = 'card-header text-center pb-2 pt-2 m-1'>
                         <Link
                             to = {`/profile/${recipe.username}`}
                             style = {{ fontWeight: 700 }}
@@ -21,17 +31,8 @@ const RecipeList = ({ recipes, recipeTitle }) => {
                             >
                                 {recipe.username}
                         </Link>{"'s "}
-                        recipe created on {recipe.createdAt}
+                        recipe <br/>created on {recipe.createdAt}
                     </p>
-                    <div className = 'card-body'>
-                        <Link to = {`/recipe/${recipe._id}`}>
-                            <p>{recipe.recipeTitle}</p>
-                            <p className = 'mb-0'>
-                                Reviews: {recipe.reviewCount || 0}{' '}
-                                Upvotes: {recipe.votes || 0}
-                            </p>
-                        </Link>
-                    </div>
                 </div>
             ))}
         </div>

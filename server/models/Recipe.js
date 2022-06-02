@@ -34,6 +34,11 @@ const RecipeSchema = new Schema(
       type: Number,
       default: 0
     }
+  },
+  {
+    toJSON: {
+      getters: true
+    }
   }
 );
 
@@ -43,6 +48,10 @@ RecipeSchema.virtual('reviewCount').get(function() {
 
 RecipeSchema.virtual('voteCount').get(function() {
   return this.votes.length;
+});
+
+RecipeSchema.virtual('reviewCount').get(function() {
+  return this.reviews.length;
 });
 
 const Recipe = model('Recipe', RecipeSchema);
