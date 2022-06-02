@@ -27,7 +27,7 @@ const ReviewForm = ({ recipeId }) => {
 
         try{
             await addReview({
-                variables: { reviewText, recipeId }
+                variables: { reviewTitle, reviewText, recipeId }
             });
 
             setTitleText('');
