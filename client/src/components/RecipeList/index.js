@@ -18,8 +18,7 @@ const RecipeList = ({ recipes, recipeTitle }) => {
                         <Link to = {`/recipe/${recipe._id}`}>
                             <h2 className='mb-3'>{recipe.recipeTitle}</h2>
                             <h6 className = 'mb-0'>
-                                Reviews: {recipe.reviewCount} || Click to{' '}
-                                {recipe.reviewCount ? 'see' : 'make a'} Review!
+                                Reviews: {recipe.reviewCount}
                             </h6>
                         </Link>
                     </div>
@@ -30,8 +29,8 @@ const RecipeList = ({ recipes, recipeTitle }) => {
                             className = 'text-light'
                             >
                                 {recipe.username}
-                        </Link>{"'s "}
-                        recipe <br/>created on {recipe.createdAt}
+                        </Link>{" "}
+                        recipe <br/>{recipe.createdAt}
                     </p>
                 </div>
             ))}
