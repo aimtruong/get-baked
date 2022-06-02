@@ -26,18 +26,18 @@ const SingleRecipe = (props) => {
   return (
     <div>
       <div className="card mb-3">
-        <p className="card-header">
+        <p className="card-header text-center">
           <span style={{ fontWeight: 700 }} className="text-light">
             {recipe.username}
           </span>{"'s "}
-          recipe on {recipe.recipeTitle} created on {recipe.createdAt}
+          recipe on {recipe.recipeTitle} <br/>created on {recipe.createdAt}
         </p>
-        <div className="card-body">
-          <p>Description:</p>
+        <div className="card-body text-center">
+          <h2>Description:</h2>
           <p>{recipe.description}</p>
-          <p>Steps:</p>
+          <h2>Steps:</h2>
           <p>{recipe.steps}</p>
-          <p>Ingredients:</p>
+          <h2>Ingredients:</h2>
           <p>{recipe.ingredients}</p>
         </div>
       </div>
