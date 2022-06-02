@@ -34,11 +34,26 @@ const RecipeForm = () => {
         }
     });
 
-    const handleChange = event => {
+    const handleTitleChange = event => {
         if(event.target.value.length <= 280){
             setTitleText(event.target.value);
+        };
+    };
+
+    const handleDescChange = event => {
+        if(event.target.value.length <= 280){
             setDescText(event.target.value);
+        };
+    };
+
+    const handleIngredChange = event => {
+        if(event.target.value.length <= 280){
             setIngredText(event.target.value);
+        };
+    };
+
+    const handleStepsChange = event => {
+        if(event.target.value.length <= 280){
             setStepsText(event.target.value);
         };
     };
@@ -71,28 +86,28 @@ const RecipeForm = () => {
                 onSubmit = {handleFormSubmit}
             >
                 <textarea
-                    placeholder = "The Recipe Title"
+                    placeholder = "Title"
                     value = {recipeTitle}
                     className = 'form-input col-12 col-md-9'
-                    onChange = {handleChange}
+                    onChange = {handleTitleChange}
                 ></textarea>
                 <textarea
-                    placeholder = "The Recipe Description"
+                    placeholder = "Description"
                     value = {description}
                     className = 'form-input col-12 col-md-9'
-                    onChange = {handleChange}
+                    onChange = {handleDescChange}
                 ></textarea>
                 <textarea
-                    placeholder = "The Recipe Ingredients"
+                    placeholder = "Ingredients"
                     value = {ingredients}
                     className = 'form-input col-12 col-md-9'
-                    onChange = {handleChange}
+                    onChange = {handleIngredChange}
                 ></textarea>
                 <textarea
-                    placeholder = "The Recipe Steps"
+                    placeholder = "Steps"
                     value = {steps}
                     className = 'form-input col-12 col-md-9'
-                    onChange = {handleChange}
+                    onChange = {handleStepsChange}
                 ></textarea>
                 <button className = 'btn col-12 col-md-3' type = 'submit'>
                     Submit
