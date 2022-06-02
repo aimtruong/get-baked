@@ -10,9 +10,14 @@ const ReviewForm = ({ recipeId }) => {
 
     const [addReview, { error }] = useMutation(ADD_REVIEW);
 
-    const handleChange = (event) => {
+    const handleTitleChange = (event) => {
         if(event.target.value.length <= 280){
             setTitleText(event.target.value);
+        }
+    };
+
+    const handleTextChange = (event) => {
+        if(event.target.value.length <= 280){
             setText(event.target.value);
         }
     };
@@ -43,16 +48,16 @@ const ReviewForm = ({ recipeId }) => {
                 onSubmit = {handleFormSubmit}
             >
                 <textarea
-                    placeholder = 'The Review Title'
+                    placeholder = 'Title'
                     value = {reviewTitle}
                     className = 'form-input col-12 col-md-9'
-                    onChange = {handleChange}
+                    onChange = {handleTitleChange}
                 ></textarea>
                 <textarea
-                    placeholder = 'The Review Title'
+                    placeholder = 'Text'
                     value = {reviewText}
                     className = 'form-input col-12 col-md-9'
-                    onChange = {handleChange}
+                    onChange = {handleTextChange}
                 ></textarea>
                 <button className = 'btn col-12 col-md-3' type = 'submit'>Submit</button>
             </form>

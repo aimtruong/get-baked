@@ -28,7 +28,7 @@ const RecipeList = ({ recipes, recipeTitle }) => {
                             <p>{recipe.recipeTitle}</p>
                             <p className = 'mb-0'>
                                 Reviews: {recipe.reviewCount} || Click to{' '}
-                                {recipe.reviewCount ? 'see' : 'make a'} Reviews!
+                                {recipe.reviewCount ? 'see' : 'make a'} Review!
                             </p>
                         </Link>
                     </div>

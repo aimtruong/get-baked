@@ -10,12 +10,11 @@ import Auth from '../utils/auth';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_RECIPES);
-  console.log(data)
 
   const { data:userData } = useQuery(QUERY_ME_BASIC);
   
   const recipes = data?.recipes || [];
-  console.log(recipes);
+  
   const loggedIn = Auth.loggedIn();
 
   return (
