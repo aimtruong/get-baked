@@ -16,9 +16,9 @@ const RecipeList = ({ recipes, recipeTitle }) => {
 
                     <div className = 'card-body text-center'>
                         <Link to = {`/recipe/${recipe._id}`}>
-                            <h2 class = 'mb-3'>{recipe.recipeTitle}</h2>
+                            <h2 className='mb-3'>{recipe.recipeTitle}</h2>
                             <h6 className = 'mb-0'>
-                                Reviews: {recipe.reviewCount} 0 || Click to{' '}
+                                Reviews: {recipe.reviewCount} || Click to{' '}
                                 {recipe.reviewCount ? 'see' : 'make a'} Review!
                             </h6>
                         </Link>
