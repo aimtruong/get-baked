@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { useQuery } from '@apollo/client';
@@ -18,11 +18,17 @@ const SingleRecipe = (props) => {
   });
 
   const recipe = data?.recipe || {};
-
+    
+  const [vote, setVote] = useState(0);
+  
   const increment = () => {
-    this.setState({
-      votes: this.state.votes + 1
-    });
+    setVote(vote + 1);
+    console.log(vote);
+  };
+
+  const decrement = () => {
+    setVote(vote - 1);
+    console.log(vote);
   };
 
   if(loading){
@@ -47,7 +53,13 @@ const SingleRecipe = (props) => {
           <p>{recipe.ingredients}</p>
         </div>
       </div>
-      <button className = "upvote" onClick = {increment}>Upvote</button>
+      <button className = "upvote" onClick = {increment} disabled = {vote === 1}>
+      ⬆
+      </button>
+      <span> {recipe.votes} </span>
+      <button onClick = {decrement} disabled = {vote === -1}>
+      ⬇
+      </button>
       {recipe.reviewCount > 0 && (<ReviewList reviews = {recipe.reviews} />)}
       {Auth.loggedIn() && <ReviewForm recipeId = {recipe._id} />}
     </div>
