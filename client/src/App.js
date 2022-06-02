@@ -38,8 +38,9 @@ function App() {
       <Router>
         <div className='flex-column justify-flex-start min-100-vh'>
           <Header />
+          <div class='hero'></div>
           <div className='container'>
-              
+
               <Routes>
                 <Route path = '/' element = {<Home />} />
                 <Route path = '/login' element = {<Login />} />
