@@ -47,7 +47,7 @@ const Profile = (props) => {
         <div className="col-12 mb-3 col-lg-8">
           <RecipeList 
             recipes = {user.recipes} 
-            title = {`${user.username}'s recipes...`} />
+            title = {`${user}'s recipes...`} />
         </div>
       </div>
       <div className = 'mb-3'>

@@ -37,6 +37,10 @@ const RecipeSchema = new Schema(
   }
 );
 
+RecipeSchema.virtual('reviewCount').get(function() {
+  return this.reviews.length;
+});
+
 RecipeSchema.virtual('voteCount').get(function() {
   return this.votes.length;
 });

@@ -19,6 +19,12 @@ const SingleRecipe = (props) => {
 
   const recipe = data?.recipe || {};
 
+  const increment = () => {
+    this.setState({
+      votes: this.state.votes + 1
+    });
+  };
+
   if(loading){
     return <div>Loading...</div>;
   };
@@ -41,9 +47,7 @@ const SingleRecipe = (props) => {
           <p>{recipe.ingredients}</p>
         </div>
       </div>
-      <p>
-      <button className = "upvote">{recipe.voteCount} Upvote</button>
-      </p>
+      <button className = "upvote" onClick = {increment}>Upvote</button>
       {recipe.reviewCount > 0 && (<ReviewList reviews = {recipe.reviews} />)}
       {Auth.loggedIn() && <ReviewForm recipeId = {recipe._id} />}
     </div>

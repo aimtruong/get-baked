@@ -27,8 +27,8 @@ const RecipeList = ({ recipes, recipeTitle }) => {
                         <Link to = {`/recipe/${recipe._id}`}>
                             <p>{recipe.recipeTitle}</p>
                             <p className = 'mb-0'>
-                                Reviews: {recipe.reviewCount} || Click to{' '}
-                                {recipe.reviewCount ? 'see' : 'make a'} Review!
+                                Reviews: {recipe.reviewCount || 0}{' '}
+                                Upvotes: {recipe.votes || 0}
                             </p>
                         </Link>
                     </div>
