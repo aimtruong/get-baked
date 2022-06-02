@@ -20,7 +20,7 @@ const RecipeList = ({ recipes, recipeTitle }) => {
                             className = 'text-light'
                             >
                                 {recipe.username}
-                        </Link>{" "}
+                        </Link>{"'s "}
                         recipe created on {recipe.createdAt}
                     </p>
                     <div className = 'card-body'>
