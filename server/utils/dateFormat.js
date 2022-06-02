@@ -6,13 +6,13 @@ const addDateSuffix = date => {
     const lastChar = dateStr.charAt(dateStr.length - 1);
   
     if (lastChar === '1' && dateStr !== '11') {
-      dateStr = `${dateStr}st`;
+      dateStr = `${dateStr}/`;
     } else if (lastChar === '2' && dateStr !== '12') {
-      dateStr = `${dateStr}nd`;
+      dateStr = `${dateStr}/`;
     } else if (lastChar === '3' && dateStr !== '13') {
-      dateStr = `${dateStr}rd`;
+      dateStr = `${dateStr}/`;
     } else {
-      dateStr = `${dateStr}th`;
+      dateStr = `${dateStr}/`;
     }
   
     return dateStr;
@@ -25,18 +25,18 @@ const addDateSuffix = date => {
   ) => {
     // create month object
     const months = {
-      0: monthLength === 'short' ? 'Jan' : 'January',
-      1: monthLength === 'short' ? 'Feb' : 'February',
-      2: monthLength === 'short' ? 'Mar' : 'March',
-      3: monthLength === 'short' ? 'Apr' : 'April',
-      4: monthLength === 'short' ? 'May' : 'May',
-      5: monthLength === 'short' ? 'Jun' : 'June',
-      6: monthLength === 'short' ? 'Jul' : 'July',
-      7: monthLength === 'short' ? 'Aug' : 'August',
-      8: monthLength === 'short' ? 'Sep' : 'September',
-      9: monthLength === 'short' ? 'Oct' : 'October',
-      10: monthLength === 'short' ? 'Nov' : 'November',
-      11: monthLength === 'short' ? 'Dec' : 'December'
+      0: monthLength === 'short' ? '1/' : 'January',
+      1: monthLength === 'short' ? '2/' : 'February',
+      2: monthLength === 'short' ? '3/' : 'March',
+      3: monthLength === 'short' ? '4/' : 'April',
+      4: monthLength === 'short' ? '5/' : 'May',
+      5: monthLength === 'short' ? '6/' : 'June',
+      6: monthLength === 'short' ? '7/' : 'July',
+      7: monthLength === 'short' ? '8/' : 'August',
+      8: monthLength === 'short' ? '9/' : 'September',
+      9: monthLength === 'short' ? '10/' : 'October',
+      10: monthLength === 'short' ? '11/' : 'November',
+      11: monthLength === 'short' ? '12/' : 'December'
     };
   
     const dateObj = new Date(timestamp);
@@ -62,7 +62,7 @@ const addDateSuffix = date => {
     // set `am` or `pm`
     const periodOfDay = dateObj.getHours() >= 12 ? 'pm' : 'am';
   
-    const formattedTimeStamp = `${formattedMonth} ${dayOfMonth}, ${year} at ${hour}:${minutes} ${periodOfDay}`;
+    const formattedTimeStamp = `${formattedMonth} ${dayOfMonth} ${year} at ${hour}:${minutes} ${periodOfDay}`;
   
     return formattedTimeStamp;
   };

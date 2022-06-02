@@ -38,12 +38,10 @@ const SingleRecipe = (props) => {
   return (
     <div>
       <div className="card mb-3">
-        <p className="card-header text-center">
-          <span style={{ fontWeight: 700 }} className="text-light">
-            {recipe.username}
-          </span>{"'s "}
-          recipe on {recipe.recipeTitle} <br/>created on {recipe.createdAt}
-        </p>
+        <div className="card-header text-center"> 
+          <h1>{recipe.recipeTitle}</h1>
+        </div>
+        
         <div className="card-body text-center">
           <h2>Description:</h2>
           <p>{recipe.description}</p>
@@ -52,6 +50,12 @@ const SingleRecipe = (props) => {
           <h2>Ingredients:</h2>
           <p>{recipe.ingredients}</p>
         </div>
+        <p className="card-header text-center">
+          <span style={{ fontWeight: 700 }} className="text-light">
+            {recipe.username}
+          </span>
+          <br></br>{recipe.createdAt}
+        </p>
       </div>
       <button className = "upvote" onClick = {increment} disabled = {vote === 1}>
       ⬆
