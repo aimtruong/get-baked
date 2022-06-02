@@ -38,7 +38,8 @@ export const QUERY_RECIPE = gql`
                 _id
                 createdAt
                 username
-                reactionBody
+                reviewTitle
+                reviewText
             }
             votes
         }

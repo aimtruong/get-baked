@@ -33,8 +33,11 @@ const SingleRecipe = (props) => {
           recipe on {recipe.recipeTitle} created on {recipe.createdAt}
         </p>
         <div className="card-body">
+          <p>Description:</p>
           <p>{recipe.description}</p>
+          <p>Steps:</p>
           <p>{recipe.steps}</p>
+          <p>Ingredients:</p>
           <p>{recipe.ingredients}</p>
         </div>
       </div>
