@@ -4,24 +4,28 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_REVIEW } from '../../utils/mutations';
 
+// reviewForm for user to write a review under a recipe
 const ReviewForm = ({ recipeId }) => {
     const [reviewTitle, setTitleText] = useState('');
     const [reviewText, setText] = useState('');
 
     const [addReview, { error }] = useMutation(ADD_REVIEW);
 
+    // checks title input
     const handleTitleChange = (event) => {
         if(event.target.value.length <= 280){
             setTitleText(event.target.value);
         }
     };
 
+    // checks text input
     const handleTextChange = (event) => {
         if(event.target.value.length <= 280){
             setText(event.target.value);
         }
     };
 
+    // once button for submit is clicked, a review is added under the recipe and set the text areas back to empty
     const handleFormSubmit = async event => {
         event.preventDefault();
 

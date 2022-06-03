@@ -7,6 +7,7 @@ import RecipeList from '../components/RecipeList';
 
 import Auth from '../utils/auth';
 
+// front page when first opened where if no recipes are queried, then No Recipes added is shown
 const Home = () => {
   const { loading, data } = useQuery(QUERY_RECIPES);
   

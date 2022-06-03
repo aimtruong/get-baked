@@ -4,6 +4,7 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
+// login page to have a known user join and able to make recipes and reviews
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
 

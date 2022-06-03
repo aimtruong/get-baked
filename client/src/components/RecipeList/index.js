@@ -2,11 +2,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// recipeList to display each recipes
 const RecipeList = ({ recipes, recipeTitle }) => {
     if (!recipes.length) {
         return <h3>No Recipes Yet</h3>;
     }
-
 
     return (
         <div>

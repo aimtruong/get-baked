@@ -13,6 +13,7 @@ import SingleRecipe from './pages/SingleRecipe';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 
+// connect server and client with one localhost link
 const httpLink = createHttpLink({
   uri: '/graphql'
 });
