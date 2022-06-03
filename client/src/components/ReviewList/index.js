@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// reviewList to display a list of reviews under a specific recipe
 const ReviewList = ({ reviews }) => {
     return (
         <div className = 'card mb-3'>

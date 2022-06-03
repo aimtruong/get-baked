@@ -6,12 +6,14 @@ import { ADD_RECIPE } from '../../utils/mutations';
 
 import { QUERY_RECIPES, QUERY_ME } from '../../utils/queries';
 
+// recipeForm to have textareas for user to type inputs and create a recipe
 const RecipeForm = () => {
     const [recipeTitle, setTitleText] = useState('');
     const [description, setDescText] = useState('');
     const [ingredients, setIngredText] = useState('');
     const [steps, setStepsText] = useState('');
     
+    // mutation to add a recipe that's added under the user's query
     const [addRecipe, { error }] = useMutation(ADD_RECIPE, {
         update(cache, { data: { addRecipe } }){
             try{
@@ -34,30 +36,35 @@ const RecipeForm = () => {
         }
     });
 
+    // update title's text area
     const handleTitleChange = event => {
         if(event.target.value.length <= 280){
             setTitleText(event.target.value);
         };
     };
 
+    // update description's text area
     const handleDescChange = event => {
         if(event.target.value.length <= 280){
             setDescText(event.target.value);
         };
     };
 
+    // update ingredients' text area
     const handleIngredChange = event => {
         if(event.target.value.length <= 280){
             setIngredText(event.target.value);
         };
     };
 
+    // update steps' text area
     const handleStepsChange = event => {
         if(event.target.value.length <= 280){
             setStepsText(event.target.value);
         };
     };
 
+    // once complete, form would submit to add the recipe with the inputs and text areas are set back to empty
     const handleFormSubmit = async event => {
         event.preventDefault();
 

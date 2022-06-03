@@ -3,6 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 
+// Header to include login and signup
+// if logged in, profile tab and log out
 const Header = () => {
   const logout = event => {
     event.preventDefault();

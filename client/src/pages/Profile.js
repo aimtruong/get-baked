@@ -10,7 +10,7 @@ import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
-
+// profile page to have user see all of their recipes, can only see if logged in
 const Profile = (props) => {
   const { username: userParam } = useParams();
 

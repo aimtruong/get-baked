@@ -10,6 +10,7 @@ import ReviewForm from '../components/ReviewForm';
 
 import Auth from '../utils/auth';
 
+// a page for a specific recipe where we can see the description/ingredients/steps/reviews/votes
 const SingleRecipe = (props) => {
   const { id: recipeId } = useParams();
   

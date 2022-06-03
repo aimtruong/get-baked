@@ -42,10 +42,12 @@ const RecipeSchema = new Schema(
   }
 );
 
+// reviewCount to show how many current reviews for recipe
 RecipeSchema.virtual('reviewCount').get(function() {
   return this.reviews.length;
 });
 
+// voteCount to show how many current upvotes for recipe
 RecipeSchema.virtual('voteCount').get(function() {
   return this.votes.length;
 });
