@@ -11,7 +11,7 @@ const ReviewList = ({ reviews }) => {
             <div className = 'card-body'>
                 {reviews && reviews.map(review => (
                     <p className = 'pill mb-3' key = {review._id}>
-                        {review.reviewTitle} {' '}
+                        {review.reviewTitle} by {' '}
                         <Link to = {`/profile/${review.username}`} style = {{ fontWeight: 700 }}>
                             {review.username} on {review.createdAt}
                         </Link>

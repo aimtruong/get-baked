@@ -38,7 +38,7 @@ function App() {
       <Router>
         <div className='flex-column justify-flex-start min-100-vh'>
           <Header />
-          <div class='hero'></div>
+          <div className ='hero'></div>
           <div className='container'>
 
               <Routes>

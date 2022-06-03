@@ -31,7 +31,6 @@ const typeDefs = gql`
         createdAt: String
         username: String
         reviewCount: Int
-        votes: Int
     }
 
     type Query{

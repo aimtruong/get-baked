@@ -42,12 +42,12 @@ const RecipeSchema = new Schema(
   }
 );
 
-RecipeSchema.virtual('voteCount').get(function() {
-  return this.votes.length;
-});
-
 RecipeSchema.virtual('reviewCount').get(function() {
   return this.reviews.length;
+});
+
+RecipeSchema.virtual('voteCount').get(function() {
+  return this.votes.length;
 });
 
 const Recipe = model('Recipe', RecipeSchema);

@@ -21,7 +21,7 @@ const Profile = (props) => {
   const user = data?.me || data?.user || {};
   
   if(Auth.loggedIn() && Auth.getProfile().data.username === userParam){
-    return <Navigate to = "/profile" />;
+    return <Navigate to = '/profile' />;
   };
   
   if(loading){
@@ -33,7 +33,6 @@ const Profile = (props) => {
       <h4>You need to be logged in to see this page. Use the navigation links above to sign up or log in!</h4>
       )
     };
-
 
   return (
     <div>
