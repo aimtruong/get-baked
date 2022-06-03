@@ -11,7 +11,7 @@ An application for people who bake to share their recipes. Users are able to mak
 * Apollo Server
 * MongoDB and Mongoose ODM
 * JSX and JWT
-* Reactstrap CSS
+* CSS
 
 ## First Look
 <img src = './client/src/utils/first-look.JPG' width = '400' height = '400'>
