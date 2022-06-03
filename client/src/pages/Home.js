@@ -11,7 +11,6 @@ const Home = () => {
   const { loading, data } = useQuery(QUERY_RECIPES);
   
   const recipes = data?.recipes || [];
-  console.log(recipes);
   const loggedIn = Auth.loggedIn();
 
   return (

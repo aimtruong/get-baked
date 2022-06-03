@@ -21,7 +21,7 @@ const SingleRecipe = (props) => {
     
   const [vote, setVote] = useState(0);
   
-  const increment = () => {
+  /*const increment = () => {
     setVote(vote + 1);
     console.log(vote);
   };
@@ -29,7 +29,17 @@ const SingleRecipe = (props) => {
   const decrement = () => {
     setVote(vote - 1);
     console.log(vote);
+  };*/
+
+  const handleClick = () => {
+    if(vote === 0){
+      setVote(vote + 1)
+    }
+    else{
+      setVote(vote - 1)
+    }
   };
+  console.log(vote)
 
   if(loading){
     return <div>Loading...</div>;
@@ -57,13 +67,12 @@ const SingleRecipe = (props) => {
           <br></br>{recipe.createdAt}
         </p>
       </div>
-      <button className = "upvote" onClick = {increment} disabled = {vote === 1}>
-      ⬆
-      </button>
-      <span> {recipe.votes} </span>
-      <button onClick = {decrement} disabled = {vote === -1}>
-      ⬇
-      </button>
+      <div>
+        <button className = "vote" onClick = {handleClick} disabled = {vote === 1}>
+        ⬆ Upvote
+        </button>
+        <span> {recipe.votes} </span>
+      </div>
       {recipe.reviewCount > 0 && (<ReviewList reviews = {recipe.reviews} />)}
       {Auth.loggedIn() && <ReviewForm recipeId = {recipe._id} />}
     </div>
