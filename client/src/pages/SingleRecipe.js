@@ -21,6 +21,7 @@ const SingleRecipe = (props) => {
     
   const [vote, setVote] = useState(0);
   
+  
   /*const increment = () => {
     setVote(vote + 1);
     console.log(vote);
